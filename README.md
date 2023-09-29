@@ -1,2 +1,1 @@
-# labs
-Laboratories 
+# Useful Linux tricks & tips
