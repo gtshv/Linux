@@ -1,11 +1,11 @@
 sudo dd if=/dev/zero of=/home/<user>/ext4 bs=1 count=0 seek=5G 		# Create empty image 
-losetup -f 								                            # Find 1st not used loop interface
-sudo losetup /dev/<free loop> ext4 					                # Attach image file to the loop interface
-sudo fdisk -l /dev/<free loop> 						                # List disk properties
-sudo mkfs -t ext4 -O casefold /dev/<free loop> 				        # Format the device to ext.4 using case insensitive 
-sudo mkdir /mnt/ext4								                # Make new directory where the new device will be mounted
-sudo mount /dev/<free loop> /mnt/ext4/					            # Mount the new device
-sudo mkdir <newdir>								                    # Create directory(workspace)to which case insensetivity will be added as property
-sudo chattr +F <newdir>/							                # Make it case insensitive with this command
-sudo lsattr									                        # List the directory attributes and look for "F" tag to be sure if it done
--> post actions													    # When the device is done you should apply it in Jenkins as a workspace in pod templates
+losetup -f 								                                        # Find 1st not used loop interface
+sudo losetup /dev/<free loop> ext4 					                      # Attach image file to the loop interface
+sudo fdisk -l /dev/<free loop> 						                        # List disk properties
+sudo mkfs -t ext4 -O casefold /dev/<free loop> 				            # Format the device to ext.4 using case insensitive 
+sudo mkdir /mnt/ext4								                              # Make new directory where the new device will be mounted
+sudo mount /dev/<free loop> /mnt/ext4/					                  # Mount the new device
+sudo mkdir <newdir>								                                # Create directory(workspace)to which case insensetivity will be added as property
+sudo chattr +F <newdir>/							                            # Make it case insensitive with this command
+sudo lsattr									                                      # List the directory attributes and look for "F" tag to be sure if it done
+-> post actions													                          # When the device is done you should apply it in Jenkins as a workspace in pod templates
